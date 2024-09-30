@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>نظام إدارة الطلبات - بهارات</title>
+</head>
+<body>
+    <header>
+        <h1>نظام إدارة الطلبات - بهارات</h1>
+    </header>
+    <main>
+        <section>
+            <h2>إضافة طلب جديد</h2>
+            <form id="orderForm">
+                <label for="customerName">اسم العميل:</label>
+                <input type="text" id="customerName" name="customerName" required>
+                
+                <label for="orderNumber">رقم الطلب:</label>
+                <input type="number" id="orderNumber" name="orderNumber" required>
+                
+                <label for="orderPrice">سعر الطلب:</label>
+                <input type="number" id="orderPrice" name="orderPrice" required>
+                
+                <label for="discountedPrice">سعر بعد الخصم:</label>
+                <input type="number" id="discountedPrice" name="discountedPrice" required>
+                
+                <label for="orderType">نوع الطلب:</label>
+                <input type="text" id="orderType" name="orderType" required>
+                
+                <label for="shippingCompany">شركة الشحن:</label>
+                <input type="text" id="shippingCompany" name="shippingCompany" required>
+                
+                <label for="orderAddress">عنوان الطلب:</label>
+                <input type="text" id="orderAddress" name="orderAddress" required>
+                
+                <label for="customerPhone">رقم هاتف العميل:</label>
+                <input type="text" id="customerPhone" name="customerPhone" required>
+                
+                <label for="orderDate">تاريخ الطلب:</label>
+                <input type="date" id="orderDate" name="orderDate" required>
+                
+                <button type="submit">إضافة الطلب</button>
+            </form>
+        </section>
+        <section>
+            <h2>البحث عن طلب</h2>
+            <input type="text" id="searchInput" placeholder="ابحث عن طلب...">
+            <ul id="searchResults"></ul>
+        </section>
+        <section>
+            <h2>قائمة الطلبات</h2>
+            <ul id="orderList" class="order-list"></ul>
+        </section>
+    </main>
+
+    <!-- Modal لنافذة التعديل -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>تعديل الطلب</h2>
+            <form id="editForm">
+                <label for="editCustomerName">اسم العميل:</label>
+                <input type="text" id="editCustomerName" name="editCustomerName" required>
+                
+                <label for="editOrderNumber">رقم الطلب:</label>
+                <input type="number" id="editOrderNumber" name="editOrderNumber" required>
+                
+                <label for="editOrderPrice">سعر الطلب:</label>
+                <input type="number" id="editOrderPrice" name="editOrderPrice" required>
+                
+                <label for="editDiscountedPrice">سعر بعد الخصم:</label>
+                <input type="number" id="editDiscountedPrice" name="editDiscountedPrice" required>
+                
+                <label for="editOrderType">نوع الطلب:</label>
+                <input type="text" id="editOrderType" name="editOrderType" required>
+                
+                <label for="editShippingCompany">شركة الشحن:</label>
+                <input type="text" id="editShippingCompany" name="editShippingCompany" required>
+                
+                <label for="editOrderAddress">عنوان الطلب:</label>
+                <input type="text" id="editOrderAddress" name="editOrderAddress" required>
+                
+                <label for="editCustomerPhone">رقم هاتف العميل:</label>
+                <input type="text" id="editCustomerPhone" name="editCustomerPhone" required>
+                
+                <label for="editOrderDate">تاريخ الطلب:</label>
+                <input type="date" id="editOrderDate" name="editOrderDate" required>
+                
+                <button type="button" id="saveChangesBtn">حفظ التغييرات</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal لنافذة عرض الطلب -->
+    <div id="viewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>تفاصيل الطلب</h2>
+            <div id="orderDetails"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by @Marwan Saad El Amir</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
